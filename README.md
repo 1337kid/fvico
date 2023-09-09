@@ -13,7 +13,7 @@ git clone https://github.com/1337kid/fvico.git
 cd fvico
 sudo make install
 ```
-## usage
+## Usage
 ```
 # fvico url_to_favicon
 
