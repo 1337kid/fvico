@@ -15,7 +15,7 @@ echo -e "$purple
  #        #   #   #  #       #     # 
  #         # #    #  #     # #     # 
  #          #    ###  #####  #######
- 	@1337kid       v0.4         "
+ 	@1337kid       v0.4.2         "
 echo
 
 if [[ $(which curl) == '' ]]
@@ -24,6 +24,17 @@ then
 	exit
 fi
 
+if [[ $1 == '' ]]
+then
+	echo -e '\033[0;36m
+USAGE
+
+fvico [url]
+fvico https://exampleweb.tld/favicon.ico
+
+'
+	exit
+fi
 
 echo -e "$green[ URL ] :$cyan $1"
 md5=$(curl $1 -A $useragent -s | md5sum | cut -d' ' -f1)
