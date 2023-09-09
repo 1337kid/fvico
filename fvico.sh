@@ -15,7 +15,8 @@ echo -e "$purple
  #        #   #   #  #       #     # 
  #         # #    #  #     # #     # 
  #          #    ###  #####  #######
- 	@1337kid       v0.4.2         "
+
+ 	@1337kid       v0.5"
 echo
 
 if [[ $(which curl) == '' ]]
@@ -34,6 +35,15 @@ fvico https://exampleweb.tld/favicon.ico
 
 '
 	exit
+fi
+
+check_url=$(curl -s -o /dev/null -w "%{http_code}" $1)
+if [[ $check_url == '000' ]]
+then
+	echo -e "\033[0;31m[ERROR] Error" && exit
+elif [[ $check_url == '404' ]]
+then
+	echo -e "\033[0;31m[ERROR 404] Favicon not found" && exit
 fi
 
 echo -e "$green[ URL ] :$cyan $1"
