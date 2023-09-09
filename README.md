@@ -5,7 +5,7 @@ FVICO looks for the MD5 sum of the favicon on [OWASP favicon database](https://w
 
 ![](sc.png)
 
-`This tool is helpful for CTFs`
+`This tool is helpful for CTF players`
 
 ## Installation
 ```bash
