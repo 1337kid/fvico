@@ -6,4 +6,4 @@ install:
 	install -Dm755 fvico.sh $(PROGRAM_DIR)/$(PROGRAM_NAME)
 
 uninstall:
-	rm -Rf $(PROGRAM_DIR)/$(PROGRAM_NAME)
+	rm $(PROGRAM_DIR)/$(PROGRAM_NAME)
