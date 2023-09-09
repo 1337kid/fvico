@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#https://www.relic.net/images/favicon.ico
+
 white="\033[1;37m"
 purple="\033[0;35m"
 green="\033[1;32m"
@@ -15,10 +17,11 @@ echo -e "$purple
  #        #   #   #  #       #     # 
  #         # #    #  #     # #     # 
  #          #    ###  #####  #######
- 	@1337kid       v0.3         "
+ 	@1337kid       v0.3.1         "
 echo
+
 echo -e "$green[ URL ] :$cyan $1"
-md5=$(curl $1 -A $useragent -s | md5sum)
+md5=$(curl $1 -A $useragent -s | md5sum | cut -d' ' -f1)
 echo -e "$green[ MD5 SUM ] :$cyan $md5"
 echo -e "$purple[ INFO ] :$white Checking with OWASP favicon database"
 data=$(curl https://wiki.owasp.org/index.php/OWASP_favicon_database -A $useragent -s | grep [a-f0-9]:[a-z] | grep $md5)
