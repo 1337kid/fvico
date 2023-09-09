@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#https://www.relic.net/images/favicon.ico
-
 white="\033[1;37m"
 purple="\033[0;35m"
 green="\033[1;32m"
@@ -17,8 +15,15 @@ echo -e "$purple
  #        #   #   #  #       #     # 
  #         # #    #  #     # #     # 
  #          #    ###  #####  #######
- 	@1337kid       v0.3.1         "
+ 	@1337kid       v0.4         "
 echo
+
+if [[ $(which curl) == '' ]]
+then
+	echo -e "\033[0;31m[ERROR] CURL is not installed"
+	exit
+fi
+
 
 echo -e "$green[ URL ] :$cyan $1"
 md5=$(curl $1 -A $useragent -s | md5sum | cut -d' ' -f1)
